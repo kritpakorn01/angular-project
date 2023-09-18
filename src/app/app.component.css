@@ -1,0 +1,173 @@
+.text_tittel {
+    @apply text-center font-bold
+}
+
+.flexbox {
+    @apply flex justify-between border-b-2 border-black px-2 pt-2;
+    
+}
+
+.position {
+    @apply pt-5 flex justify-center;
+}
+
+.progress-container::before {
+    content: "";
+    background: #CCD1D1;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 3px;
+    width: 100%;
+    z-index: -1;
+}
+
+.progress-container {
+    @apply flex justify-between relative mb-8 w-6/12 lg:w-52;
+
+    /* max-width: 20%; */
+}
+
+.progress {
+    @apply absolute top-12 left-0;
+
+    transform: translateY(-50%);
+    height: 4px;
+    width: 0%;
+    z-index: -1;
+
+}
+
+.circle {
+    background: #fff;
+    color: #000;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #CCD1D1;
+    transition: 0.4s ease;
+}
+
+.circle.active {
+    border-color: #000;
+    color: #fff;
+    background: #000;
+    
+}
+
+.text-position p {
+    position: absolute;
+    top: 30px;
+    font-size: 12px;
+    color: #CCD1D1;
+    width: 60%;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.text-position.active p {
+    color: #000;
+}
+
+.tax-card {
+    @apply  mt-12 p-5 lg:mx-40;
+    /* margin-top: 10px;
+    margin-left: 120px;
+    margin-right: 120px;
+    padding: 20px 30px 20px 30px; */
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+.tax-card h6 {
+    border-bottom: 2px solid #CCD1D1;
+    padding-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.tax-card p {
+    font-size: 14px;
+    
+}
+.tax-card span {
+    color: red;
+    font-weight: 500;
+}
+
+.filing-type {
+    display: flex;
+    justify-content: start;
+}
+
+
+
+.vat-mouth {
+    margin-top: 30px;
+    margin-bottom: -12px;
+}
+.vat-mouth p {
+    font-size: 12px;
+}
+.vat-mouth span {
+    color: red;
+    font-weight: 500;
+}
+.select-option {
+    display: flex;
+    justify-content: start;
+}
+
+
+
+.computation {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #CCD1D1;
+    height: 25px;
+    margin-bottom: 10px;
+}
+.computation h6 {
+    color: #000;
+    border: none;
+}
+.computation p {
+    text-decoration: underline;
+}
+
+
+.receipt-date {
+    display: flex;
+    justify-content: space-between;
+}
+.receipt-date p {
+    width: 33.33%;
+    text-align: justify;
+}
+
+
+.receipt-detail {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    @apply mt-5 w-full pl-20 mt-2 flex justify-start lg:pl-40;
+}
+.btn button {
+    padding: 5px 25px 5px 25px;
+    font-size: 12px;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+.btn button:nth-child(1) {
+    border: 2px solid #000;
+    background-color: #fff;
+}
+.btn button:nth-child(2) {
+    border: 2px solid #000;
+    background-color: #000;
+    color: #fff;
+}

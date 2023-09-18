@@ -1,0 +1,21 @@
+.radio-btn {
+    @apply w-full mr-2;
+
+}
+
+
+.radio-btn label {
+    @apply text-xs lg:text-sm;
+
+}
+.radio-btn mat-icon {
+    font-size: 16px;
+    padding: 2px;
+}
+.radio-btn input[type=radio] {
+    margin-right: 5px;
+    accent-color: #000;
+    margin-top: 5px;
+    position: relative;
+    top: 3px;
+}

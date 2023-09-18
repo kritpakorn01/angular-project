@@ -1,0 +1,103 @@
+<div class="container">
+
+  <nav class="container flexbox">
+    <div>
+      <p></p>
+    </div>
+    <div>
+      <p>kritpakorn kongkaew</p>
+    </div>
+  </nav>
+  <div class="container mt-5">
+    <h1 class="text_tittel">Submit Tax Filing</h1>
+  
+  <div class="position">
+    <div class="progress-container">
+      <div class="progress" id="progress"> </div>
+        <div class="text-position active">
+          <div class="circle active">
+            1
+            <p>Input Tax</p>
+          </div>
+        </div>
+        <div class="text-position" [ngClass]="{'active': pageNumber == 2}">
+          <div class="circle" [ngClass]="{'active': pageNumber == 2}">
+            2
+            <p>Review & Confirm</p>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="tax-card" *ngIf="pageNumber != 2">
+    <h6>1. Tax Filing Deatail</h6>
+    <p>Type of filing<span> *</span></p>   
+    <div class="filing-type">
+      <div *ngFor="let data of filing">
+        <app-filing-type value="{{data.value}}" textValue="{{data.value}}" (change)="typeOfFiling(data.value)"></app-filing-type>
+      </div>
+    </div>
+    <div class="vat-mouth">
+      <p>VAT Month<span> *</span></p>
+    </div>
+    <div>
+      <app-month (dataMonth)="checkMont($event)" (dataYear)="checkYear($event)" ></app-month>
+    </div>
+    <div class="mt-3">
+      <div class="computation">
+        <h6>2. Tax Computation</h6>
+        <p>View Exchange Rate</p>
+      </div>
+      <p style="font-weight: 500;">Provide total value taxble electronic service <span> *</span></p>
+    </div>
+    <div>
+      <app-sale-amount (saleVat)="saleVatFunc($event)"></app-sale-amount>
+      <app-tax-amount inputValue="{{totalVat || null}}"></app-tax-amount>
+    </div>
+    <div  *ngIf="pageNumber == 1">
+      <h6 style="border: none;">In case of late filing and payment, or additional filing</h6>
+      <app-surcharge section="3. Surcharge" totalPrice="{{surchange}} THB"></app-surcharge>
+      <app-penalty section="4. Penalty" totalPrice="{{surchange == null ? '' : '200.00'}} THB"></app-penalty>
+      <app-total-amount section="5. Total amount of VAT, surcharge and penalty to be remitted" totalPrice="{{totalPrice}}THB"></app-total-amount>
+    </div>
+  </div>
+
+
+  <div class="tax-card"  *ngIf="pageNumber == 2">
+    <div class="receipt">
+        <h6>Tax Filing Deatail</h6>
+          <div class="receipt-date">
+            <p><strong>Type of filing</strong></p>
+            <p>{{radioBtn || null}}</p>
+            <p></p>
+          </div>
+          <div class="receipt-date">
+            <p><strong>VAT Month</strong></p>
+            <p>{{month}} {{year}}</p>
+            <p></p>
+          </div>
+        <h6 class="mt-3">Tax Computation</h6>
+          <div class="receipt-detail">
+            <p><strong>Total value taxabile elestronic seveice exclusive od VAT</strong></p>
+            <p>{{totalService}} THB</p>
+          </div>
+          <div class="receipt-detail">
+            <p><strong>Total VAT to be remited</strong></p>
+            <p>{{surchange}} THB</p>
+          </div>
+          <div class="receipt-detail">
+            <p><strong>Total Amoun</strong></p>
+            <p><strong>{{surchange}} THB</strong></p>
+          </div>
+          <h6 class="mt-3">Declaration</h6>
+          <p>i Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id fugiat officiis ratione eligendi? Temporibus, pariatur.</p>
+    </div>
+  </div>
+
+  <div class="btn">
+    <button (click)="backPage(pageNumber)" [disabled]="pageNumber == 0">Back</button>
+    <button (click)="nextPage(pageNumber)">Next</button>
+  </div>
+
+  </div>
+</div>

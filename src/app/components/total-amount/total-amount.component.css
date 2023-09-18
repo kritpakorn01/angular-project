@@ -1,0 +1,21 @@
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.total mat-icon {
+    font-size: 16px;
+    padding: 2px;
+} 
+.total p {
+    border-radius: 3px;
+    text-align: right;
+    padding: 2px;
+    width: 25%;
+    font-size: 12px;
+    color: #7e7e7e;
+    background-color: #CCD1D1;
+    font-weight: 500;
+}

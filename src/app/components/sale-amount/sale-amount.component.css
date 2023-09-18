@@ -1,0 +1,23 @@
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.total input {
+    border: 2px solid #000;
+    border-radius: 3px;
+    text-align: right;
+    padding: 2px;
+    width: 25%;
+    font-size: 12px;
+    color: #000;
+    font-weight: 500;
+}
+.total input::placeholder {
+    color: #000;
+}
+
+.total input[type=number] {
+    appearance: textfield;
+}
