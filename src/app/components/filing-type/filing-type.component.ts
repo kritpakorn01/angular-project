@@ -18,6 +18,5 @@ export class FilingTypeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
   }
 }

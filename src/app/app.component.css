@@ -154,7 +154,7 @@
 }
 
 .btn {
-    @apply mt-5 w-full pl-20 mt-2 flex justify-start lg:pl-40;
+    @apply mt-5 pl-20 mt-2 flex justify-start lg:pl-40;
 }
 .btn button {
     padding: 5px 25px 5px 25px;
@@ -171,3 +171,21 @@
     background-color: #000;
     color: #fff;
 }
+
+.confirm {
+    text-align: center;
+}
+.confirm button {
+    padding: 5px 25px 5px 25px;
+    font-size: 12px;
+    margin-right: 20px;
+    border-radius: 20px;
+    border: 2px solid #000;
+    background-color: #000;
+    color: #fff;
+}
+
+.opacity {
+    opacity: 0.5
+}
+

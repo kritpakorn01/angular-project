@@ -34,22 +34,17 @@ export class AppComponent {
   
   ngOnInit () {
     this.typeOfFiling(0);
+    this.checkMont(1);
+    this.typeOfFiling('Ordinary Filing')
     
   }
 
   typeOfFiling(value) {
-    if (value == 0) {
       this.radioBtn = value ;
-      console.log(value);
-    } else {
-      this.radioBtn = value ;
-      console.log(value);
-    }
-    
+      console.log(this.radioBtn ,'ทดสอบ');
   }
 
   checkMont(event) {
-
       switch (event) {
           case '1':
             this.month = "January";
@@ -92,11 +87,6 @@ export class AppComponent {
 
   checkYear(event) {
     this.year = event;
-    console.log(this.year )
-  }
-
-  calculate(number) {
-    console.log(number + 10,'ทดสอบ');
   }
 
   saleVatFunc(event) {
@@ -116,13 +106,14 @@ export class AppComponent {
 
 
   backPage(page) {
+    console.log(page);
     this.pageNumber = page - 1;
-    console.log(this.pageNumber);
+    this.surchange = 0;
   }
   
   nextPage(page) {
+    console.log(page);
     this.pageNumber = page + 1;
-    console.log(this.pageNumber);
   }
 
 

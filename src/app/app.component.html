@@ -63,9 +63,9 @@
   </div>
 
 
-  <div class="tax-card"  *ngIf="pageNumber == 2">
+  <div class="tax-card" *ngIf="pageNumber == 2">
     <div class="receipt">
-        <h6>Tax Filing Deatail</h6>
+        <h6>Tax Filing Deatail </h6>
           <div class="receipt-date">
             <p><strong>Type of filing</strong></p>
             <p>{{radioBtn || null}}</p>
@@ -95,9 +95,14 @@
   </div>
 
   <div class="btn">
-    <button (click)="backPage(pageNumber)" [disabled]="pageNumber == 0">Back</button>
-    <button (click)="nextPage(pageNumber)">Next</button>
+    <button *ngIf="pageNumber != 2" (click)="backPage(pageNumber)" [disabled]="pageNumber == 0">Back</button>
+    <button *ngIf="pageNumber != 2" (click)="nextPage(pageNumber)" [disabled]="!totalService" [ngClass]="{'opacity': !totalService}">Next</button>
   </div>
+
+  <div class="confirm">
+    <button *ngIf="pageNumber == 2">Confirm</button>
+  </div>
+
 
   </div>
 </div>

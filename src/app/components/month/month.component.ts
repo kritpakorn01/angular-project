@@ -15,11 +15,11 @@ export class MonthComponent implements OnInit {
   @Output() dataYear = new EventEmitter();
 
 
-  selectedMonth = 1;
+  selectedMonth ='1';
   currentDate: Date = new Date();
   currentMonth: number = this.currentDate.getMonth() + 1
   currentYear: any = this.currentDate.getFullYear() 
-  selectedYear: number = this.currentYear;
+  selectedYear:any = this.currentYear;
   year:number[] = []
 
   constructor() { }
@@ -28,12 +28,13 @@ export class MonthComponent implements OnInit {
     
     for(let i = 2020 ; i <= this.selectedYear ; i++){
       this.year.push(i)
-      // console.log(this.year);
+      this.onYearSelected(i)
     }
-
+    this.onMonthSelected('1')
+    
   }
 
-  onMonthSelected(value) {
+  onMonthSelected(value:string) {
     this.dataMonth.emit(value)
   }
 
